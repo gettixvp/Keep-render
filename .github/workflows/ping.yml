@@ -9,5 +9,13 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Пинг сайта
-        run: curl -s https://walletback-aghp.onrender.com
+      - name: Пинг backend
+        run: |
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://walletback-aghp.onrender.com/ping)
+          echo "Ответ: $RESPONSE"
+          if [ "$RESPONSE" = "200" ]; then
+            echo "Backend жив!"
+          else
+            echo "Ошибка: $RESPONSE"
+            exit 1
+          fi
