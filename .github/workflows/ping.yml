@@ -1,0 +1,13 @@
+name: Пинг для Render
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Пинг сайта
+        run: curl -s https://wallet2-pw8n.onrender.com
