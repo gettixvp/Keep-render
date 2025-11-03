@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Пинг сайта
-        run: curl -s https://wallet2-pw8n.onrender.com
+        run: curl -s https://walletback-aghp.onrender.com
